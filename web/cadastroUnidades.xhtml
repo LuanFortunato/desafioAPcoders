@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./default.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <h:form>
+            <p:growl id="growl" showDetail="true" />
+            <p:outputPanel style="margin-top: 20px; margin-left: 20px; font-size: 25px;">
+                <p:outputPanel>
+                    Identificação: 
+                    <p:inputText style="margin-right: 5px;" value="#{unidadeMB.identificação}"/> 
+                    Condomínio:
+                    <p:inputText style="margin-right: 5px;" value="#{unidadeMB.condomínio}"/>
+                </p:outputPanel>
+                <p:outputPanel style="padding-top: 10px;">
+                    Endereço:
+                    <p:inputText style="margin-right: 5px;" value="#{unidadeMB.endereço}"/>
+                    Proprietário: 
+                    <p:selectOneMenu style="margin-top: 10px;" value="#{unidadeMB.inquilino.id}">
+                        <f:selectItem itemLabel="Selecionar" itemValue=""/>
+                        <f:selectItems value="#{inquilinoMB.todosInquilinos}" var="inquilino" itemValue="#{inquilino.id}"/>
+                    </p:selectOneMenu> 
+                </p:outputPanel>
+                <p:outputPanel style="text-align: center;">
+                    <p:commandButton style="margin-right: 5px;" value="Salvar" action="#{unidadeMB.salvarUnidade()}"/> 
+                    <p:commandButton value="Cancelar" action="#{trocaTelaMB.getUnidades()}"/> 
+                </p:outputPanel>
+            </p:outputPanel>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
