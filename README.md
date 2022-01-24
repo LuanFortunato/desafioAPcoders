@@ -1,5 +1,7 @@
 # desafioAPcoders
 
+Projeto desenvolvido em JAVA WEB
+
  - Programas utilizados
 
  [Netbeans] https://netbeans.apache.org
@@ -13,3 +15,14 @@
  - Server
 
 [WildFly] https://www.wildfly.org
+
+ - Rodar a aplicação
+ 
+ Executar o arquivo sql para a criação do banco 
+ 
+ Abrir o projeto na IDE (NetBeans)
+ 
+ Adicionar as bibliotecas
+ 
+ Executar a aplicação com o server rodando
+ 
